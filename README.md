@@ -1,2 +1,553 @@
 # Toaisha
 im not a perfect person :)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Applejack's Bouquet</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Georgia, serif;
+    background:
+        radial-gradient(circle at 50% 40%, #fff8f0 0%, #f8dfe0 45%, #d9b7c4 100%);
+}
+
+/* Background */
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: #c87989;
+    font-size: 25px;
+    opacity: .45;
+    animation: floating 5s ease-in-out infinite;
+}
+
+.h1 { left: 12%; top: 20%; }
+.h2 { right: 15%; top: 15%; animation-delay: 1s; }
+.h3 { left: 20%; bottom: 20%; animation-delay: 2s; }
+.h4 { right: 22%; bottom: 18%; animation-delay: 3s; }
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(8deg);
+    }
+}
+
+/* Main */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 900px;
+    max-width: 94%;
+    height: 650px;
+    border-radius: 35px;
+    background: rgba(255,255,255,.35);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 25px 70px rgba(120,70,80,.25);
+    border: 1px solid rgba(255,255,255,.7);
+    overflow: hidden;
+}
+
+/* Text */
+.text {
+    position: absolute;
+    top: 50px;
+    left: 55px;
+    z-index: 20;
+}
+
+.text h1 {
+    margin: 0;
+    color: #704451;
+    font-size: 42px;
+}
+
+.text p {
+    margin-top: 10px;
+    color: #9b6874;
+    font-size: 17px;
+}
+
+/* Applejack */
+.applejack {
+    position: absolute;
+    width: 500px;
+    height: 570px;
+    right: 100px;
+    bottom: -25px;
+}
+
+/* Hat */
+.hat {
+    position: absolute;
+    width: 170px;
+    height: 90px;
+    top: 20px;
+    left: 165px;
+    background: #ad6b2d;
+    border: 5px solid #7d481e;
+    border-radius: 70% 70% 25% 25%;
+    transform: rotate(-8deg);
+    z-index: 10;
+}
+
+.hat:after {
+    content: "";
+    position: absolute;
+    width: 235px;
+    height: 35px;
+    left: -38px;
+    bottom: -20px;
+    background: #9a5c28;
+    border: 5px solid #7d481e;
+    border-radius: 50%;
+}
+
+/* Hair */
+.hair {
+    position: absolute;
+    width: 175px;
+    height: 280px;
+    left: 75px;
+    top: 95px;
+    background: #ffd45a;
+    border-radius: 70% 30% 70% 40%;
+    transform: rotate(12deg);
+    z-index: 4;
+}
+
+.hair2 {
+    position: absolute;
+    width: 110px;
+    height: 190px;
+    left: 125px;
+    top: 105px;
+    background: #ffe47d;
+    border-radius: 70%;
+    transform: rotate(-18deg);
+    z-index: 5;
+}
+
+/* Head */
+.head {
+    position: absolute;
+    width: 265px;
+    height: 235px;
+    left: 120px;
+    top: 85px;
+    background: #f5a623;
+    border: 5px solid #d27d18;
+    border-radius: 50%;
+    z-index: 7;
+}
+
+/* Ear */
+.ear {
+    position: absolute;
+    width: 70px;
+    height: 100px;
+    right: -25px;
+    top: 35px;
+    background: #f5a623;
+    border: 5px solid #d27d18;
+    border-radius: 60% 30% 60% 30%;
+    transform: rotate(30deg);
+    z-index: 8;
+}
+
+/* Eye */
+.eye {
+    position: absolute;
+    width: 60px;
+    height: 82px;
+    left: 160px;
+    top: 70px;
+    background: white;
+    border: 4px solid #553a22;
+    border-radius: 50%;
+}
+
+.eye:after {
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 47px;
+    left: 14px;
+    top: 18px;
+    background: #4c7628;
+    border-radius: 50%;
+}
+
+/* Snout */
+.snout {
+    position: absolute;
+    width: 110px;
+    height: 75px;
+    left: 105px;
+    top: 145px;
+    background: #f8ad29;
+    border-radius: 50%;
+}
+
+.smile {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    left: 28px;
+    top: 20px;
+    border-bottom: 4px solid #713d20;
+    border-radius: 50%;
+}
+
+/* Body */
+.body {
+    position: absolute;
+    width: 250px;
+    height: 260px;
+    left: 135px;
+    top: 285px;
+    background: #f5a623;
+    border: 5px solid #d27d18;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* Legs */
+.leg {
+    position: absolute;
+    width: 65px;
+    height: 180px;
+    bottom: 0;
+    background: #f5a623;
+    border: 5px solid #d27d18;
+    border-radius: 40px;
+    z-index: 2;
+}
+
+.leg1 {
+    left: 145px;
+    transform: rotate(5deg);
+}
+
+.leg2 {
+    left: 240px;
+    transform: rotate(-5deg);
+}
+
+/* Tail */
+.tail {
+    position: absolute;
+    width: 165px;
+    height: 225px;
+    right: 0;
+    bottom: 85px;
+    background: #ffd45a;
+    border-radius: 80% 20% 80% 30%;
+    transform: rotate(-20deg);
+    z-index: 1;
+}
+
+/* Cutie mark */
+.cutie {
+    position: absolute;
+    font-size: 30px;
+    color: #c83232;
+    z-index: 10;
+}
+
+.c1 { left: 285px; top: 380px; }
+.c2 { left: 325px; top: 415px; }
+.c3 { left: 285px; top: 445px; }
+
+/* Bouquet */
+.bouquet {
+    position: absolute;
+    width: 330px;
+    height: 300px;
+    left: -10px;
+    top: 300px;
+    z-index: 30;
+    transform: rotate(-5deg);
+    animation: bouquetFloat 3s ease-in-out infinite;
+}
+
+@keyframes bouquetFloat {
+    0%,100% {
+        transform: rotate(-5deg) translateY(0);
+    }
+    50% {
+        transform: rotate(-3deg) translateY(-8px);
+    }
+}
+
+/* Flowers */
+.flower {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #fffaf3;
+    border: 5px solid #e99ca8;
+    z-index: 8;
+}
+
+.flower:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 19px;
+    top: 19px;
+    border-radius: 50%;
+    background: #f1bf45;
+}
+
+.f1 { left: 75px; top: 30px; }
+.f2 { left: 140px; top: 5px; }
+.f3 { left: 205px; top: 40px; }
+.f4 { left: 125px; top: 70px; }
+
+/* Stems */
+.stem {
+    position: absolute;
+    width: 6px;
+    height: 130px;
+    bottom: 90px;
+    background: #4c8748;
+    transform-origin: bottom;
+    z-index: 5;
+}
+
+.s1 { left: 110px; transform: rotate(-15deg); }
+.s2 { left: 170px; transform: rotate(2deg); }
+.s3 { left: 230px; transform: rotate(18deg); }
+
+/* Leaves */
+.leaf {
+    position: absolute;
+    width: 45px;
+    height: 22px;
+    background: #5d984c;
+    border-radius: 100% 0;
+    z-index: 6;
+}
+
+.l1 {
+    left: 70px;
+    top: 120px;
+    transform: rotate(-35deg);
+}
+
+.l2 {
+    left: 215px;
+    top: 110px;
+    transform: rotate(35deg);
+}
+
+/* Wrapping paper */
+.paper {
+    position: absolute;
+    width: 250px;
+    height: 175px;
+    left: 40px;
+    bottom: 0;
+    background: linear-gradient(135deg,#edd09f,#d9ae70);
+    clip-path: polygon(4% 0,96% 0,75% 100%,25% 100%);
+    border: 4px solid #b88750;
+    z-index: 10;
+}
+
+/* Ribbon */
+.ribbon {
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    left: 115px;
+    bottom: 30px;
+    background: #c9343c;
+    border-radius: 10px;
+    z-index: 15;
+}
+
+.ribbon:before,
+.ribbon:after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #c9343c;
+    top: -18px;
+    z-index: -1;
+}
+
+.ribbon:before {
+    left: -45px;
+    transform: rotate(25deg);
+}
+
+.ribbon:after {
+    right: -45px;
+    transform: rotate(-25deg);
+}
+
+/* Small sparkle */
+.sparkle {
+    position: absolute;
+    color: #fff;
+    font-size: 25px;
+    animation: sparkle 2s infinite;
+}
+
+.sp1 { left: 40%; top: 35%; }
+.sp2 { left: 60%; top: 25%; animation-delay: .5s; }
+.sp3 { left: 70%; top: 65%; animation-delay: 1s; }
+
+@keyframes sparkle {
+    0%,100% {
+        opacity: .2;
+        transform: scale(.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Mobile */
+@media(max-width:700px) {
+
+    .card {
+        height: 100vh;
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .text {
+        left: 25px;
+        top: 35px;
+    }
+
+    .text h1 {
+        font-size: 30px;
+    }
+
+    .text p {
+        font-size: 14px;
+    }
+
+    .applejack {
+        transform: scale(.72);
+        transform-origin: bottom center;
+        right: 50%;
+        translate: 50% 0;
+        bottom: -30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="heart h1">♡</div>
+    <div class="heart h2">♡</div>
+    <div class="heart h3">♡</div>
+    <div class="heart h4">♡</div>
+</div>
+
+<div class="container">
+
+<div class="card">
+
+    <div class="text">
+        <h1>Applejack's Bouquet</h1>
+        <p>A little bouquet made with love.</p>
+    </div>
+
+    <div class="sparkle sp1">✦</div>
+    <div class="sparkle sp2">✦</div>
+    <div class="sparkle sp3">✦</div>
+
+    <div class="applejack">
+
+        <div class="hat"></div>
+
+        <div class="hair"></div>
+        <div class="hair2"></div>
+
+        <div class="ear"></div>
+
+        <div class="head">
+            <div class="eye"></div>
+
+            <div class="snout">
+                <div class="smile"></div>
+            </div>
+        </div>
+
+        <div class="body"></div>
+
+        <div class="leg leg1"></div>
+        <div class="leg leg2"></div>
+
+        <div class="tail"></div>
+
+        <div class="cutie c1">♥</div>
+        <div class="cutie c2">♥</div>
+        <div class="cutie c3">♥</div>
+
+        <!-- Bouquet -->
+        <div class="bouquet">
+
+            <div class="stem s1"></div>
+            <div class="stem s2"></div>
+            <div class="stem s3"></div>
+
+            <div class="leaf l1"></div>
+            <div class="leaf l2"></div>
+
+            <div class="flower f1"></div>
+            <div class="flower f2"></div>
+            <div class="flower f3"></div>
+            <div class="flower f4"></div>
+
+            <div class="paper"></div>
+
+            <div class="ribbon"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+```
